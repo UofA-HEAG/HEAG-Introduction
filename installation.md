@@ -12,7 +12,8 @@ __sublime__
 Sublime is a text editor.
 It is not necessarily needed, but I personally recommend it.   
 * Download the tarball: https://sublimetext.com/3
-* In the terminal type:
+* Install it by double-clicking on it
+* Create a symlink by typing in the terminal:
 ```
 ln -s "Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 ```
@@ -28,6 +29,7 @@ xcode-select --install
 
 ### Linux
 
+Update your package manager by typing in the terminal:
 ```
 sudo apt-get update
 ```
@@ -36,7 +38,8 @@ __sublime__
 Sublime is a text editor.
 It is not necessarily needed, but I personally recommend it.   
 * Download the tarball: https://sublimetext.com/3. 
-* In the terminal type:
+* Unpack the tarball (`tar`), move it to the dedicated folder (`mv`) and create a symlink (`ln -s`). 
+Therefore, type in the terminal:
 ```
 tar -jxvf sublime_text_3_build_3143_x64.tar.bz2
 sudo mv sublime_text_3 /opt/
@@ -44,7 +47,7 @@ ln -s /opt/sublime_text_3 /usr/local/bin/subl
 ```
 
 __git__
-Git is a open source version control software.
+Git is an open source version control software.
 ```
 sudo apt-get install git
 ```
