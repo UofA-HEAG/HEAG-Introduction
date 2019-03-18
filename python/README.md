@@ -1,12 +1,12 @@
 # Jupyter Notebooks
 
-The examples in this folder are so-called ipython notebooks (.ipynb). They can be viewed here, but you can also download them and use them intereactively.
-
-During the school, we will also work with these notebooks, since they are very useful for developing code and learning new tools.
+The examples in this folder are so-called ipython notebooks (.ipynb). They can be viewed here, but you can also download them and use them intereactively.  
+They are very useful for developing code and learning new tools.
+_(Add comment to the use of scripts.)_
 
 #### Start a Notebook
 
-* Where necessary, activate a specific conda environment, e.g. for the school: `source activate cta-oz`
+* Where necessary, activate a specific conda environment, for example: `source activate my_environment`
 * Start a specific notebook via `jupyter notebook SomeNotebook.ipynb`
 * You can create a new notebook via `File->New->Notebook` and select python 3 or `New->Python 3`.
 
