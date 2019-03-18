@@ -1,8 +1,8 @@
 # Jupyter Notebooks
 
 The examples in this folder are so-called ipython notebooks (.ipynb). They can be viewed here, but you can also download them and use them intereactively.  
-They are very useful for developing code and learning new tools.
-_(Add comment to the use of scripts.)_
+They are very useful for developing code and learning new tools.  
+_(TODO: Add comment to the use of scripts.)_
 
 #### Start a Notebook
 
