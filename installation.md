@@ -46,13 +46,13 @@ sudo mv sublime_text_3 /opt/
 ln -s /opt/sublime_text_3 /usr/local/bin/subl
 ```
 
-__git__
+__git__  
 Git is an open source version control software.
 ```
 sudo apt-get install git
 ```
 
-__make__
+__make__  
 make is an automation tool to build executables and link libraries.
 ```
 sudo apt-get install make
