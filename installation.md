@@ -26,6 +26,18 @@ For their installation, type the following in the terminal:
 xcode-select --install
 ```
 
+__git__  
+Git is an open source version control software.
+It is installed via the command line tools.
+To configure, type in the terminal:
+```
+git config --global user.name "Albert Einstein"
+git config --global user.email "albert.einstein@adelaide.edu.au"
+git config --global pull.rebase true
+git config --global rebase.stat true
+git config --global merge.conflictstyle diff3
+```
+
 
 ### Linux
 
@@ -48,14 +60,28 @@ ln -s /opt/sublime_text_3 /usr/local/bin/subl
 
 __git__  
 Git is an open source version control software.
+To install, type in the terminal:
 ```
 sudo apt-get install git
+```
+To configure, type in the terminal:
+```
+git config --global user.name "Albert Einstein"
+git config --global user.email "albert.einstein@adelaide.edu.au"
+git config --global pull.rebase true
+git config --global rebase.stat true
+git config --global merge.conflictstyle diff3
 ```
 
 __make__  
 make is an automation tool to build executables and link libraries.
 ```
 sudo apt-get install make
+```
+
+__curl__  
+```
+sudo apt-get curl
 ```
 
 
@@ -84,4 +110,45 @@ yes
 `conda update anaconda`
  
 
-## Installation of latex
+## Installation of LaTeX
+
+### MacOS
+
+* Download MacTeX from here: http://tug.org/cgi-bin/mactex-download/MacTeX.pkg
+* Doubl-click the downloaded file to install it. Follow the instructions.
+
+Configure the TeXLive manager:
+```
+sudo tlmgr option autobackup -- -1
+sudo tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
+```
+
+Update TeXLive:
+```
+sudo tlmgr update --self --all --reinstall-forcibly-removed
+```
+
+### Linux
+
+Type in terminal:
+```
+cd ~/.local
+curl -L http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar xz
+TEXLIVE_INSTALL_PREFIX=~/.local/texlive ./install-tl-*/install-tl
+```
+
+Open `~/.bashrc` (for example with _sublime_ or _vi_) and add the following line:
+```
+export PATH="$HOME/.local/texlive/2018/bin/x86_64-linux:$PATH"
+```
+
+Configure the TeXLive manager:
+```
+tlmgr option autobackup -- -1
+tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
+```
+
+Update TeXLive:
+```
+tlmgr update --self --all --reinstall-forcibly-removed
+```
