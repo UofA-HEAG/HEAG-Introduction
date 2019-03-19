@@ -1,5 +1,9 @@
 # Installation Instructions
 
+Note: The Linux instructions are assuming Ubuntu. 
+Alternative distributions are equipped with different package managers.
+Replace `apt-get` with the corresponding manager.
+
 # General Stuff
 
 ### MacOS
