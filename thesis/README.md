@@ -17,3 +17,13 @@ or
 ```
 make
 ```
+
+## Different Thesis Types
+
+This template can be used for different types of theses. Only small adaptions are required, which are described in the following.
+
+### Honours Thesis
+
+### Master Thesis
+
+### PhD Thesis
