@@ -156,3 +156,14 @@ Update TeXLive:
 ```
 tlmgr update --self --all --reinstall-forcibly-removed
 ```
+
+## Test Your Installation
+
+In the terminal, try the following commands:
+
+* `git` (git help should show up)
+* `make` (_make: *** No targets specified and no makefile found. Stop._ should show up.)
+* `python` (Interactive python  session should start up and the prompt is specifying your python version. Exit with `exit()`)
+* `luatex` (_This is LuaTeX, Version 1.07.0 (TeX Live 2018) 
+ restricted system commands enabled._ should show up. Exit with `ctrl-c`.)
+ * `biber` (biber help should show up.)
