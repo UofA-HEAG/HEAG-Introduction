@@ -115,7 +115,7 @@ yes
 ### MacOS
 
 * Download MacTeX from here: http://tug.org/cgi-bin/mactex-download/MacTeX.pkg
-* Doubl-click the downloaded file to install it. Follow the instructions.
+* Double-click the downloaded file to install it. Follow the instructions.
 
 Configure the TeXLive manager:
 ```
