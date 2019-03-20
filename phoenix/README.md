@@ -3,6 +3,10 @@
 https://wiki.adelaide.edu.au/hpc
 
 ## Get your Account
+Speak to your supervisor if you can request an account.
+Reqeust your account here: https://www.adelaide.edu.au/technology/research/high-performance-computing/phoenix-hpc/register-for-an-account
+You will receive a mail from the Technology Service Desk to acknowledge that your access has been provisioned. 
+It may take 1-2 days for the system to update and for you to log in.
 
 
 ## Configuration
