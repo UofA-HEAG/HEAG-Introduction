@@ -32,7 +32,7 @@ Therefore, execute the following steps:
 
 On your computer:
 ```
-ssh-keygen -o -C a1224137@phoenix.adelaide.edu.au -f ~/.ssh/id_phoenix
+ssh-keygen -o -C aXXXXXXX@phoenix.adelaide.edu.au -f ~/.ssh/id_phoenix
 ssh-copy-id -i ~/.ssh/id_phoenix.pub phoenix.adelaide.edu.au
 ```
 You will be asked for your password - this is the password of your UofA account (aXXXXX).
