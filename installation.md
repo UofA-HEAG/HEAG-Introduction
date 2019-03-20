@@ -59,7 +59,7 @@ Therefore, type in the terminal:
 ```
 tar -jxvf sublime_text_3_build_3143_x64.tar.bz2
 sudo mv sublime_text_3 /opt/
-ln -s /opt/sublime_text_3 /usr/local/bin/subl
+sudo ln -s /opt/sublime_text_3 /usr/local/bin/subl
 ```
 
 __git__  
