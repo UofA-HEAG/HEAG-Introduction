@@ -52,11 +52,11 @@ Now you can login via `ssh phoenix` and the password (or no password) of your ke
 
 ## Useful Commands
 
-On phoenix:
+__On phoenix__:
 
 `rcdu`: Shows your personal disk usage  
 `du -h`: Shows your disk usage of specific folders in a human-readable format
 
-On your computer:
+__On your computer__:
 
 `scp phoenix:~/SomeFile.txt .`: This copies the file `SomeFile.txt` stored in your phoenix home folder to the folder on your computer you are currently in.
