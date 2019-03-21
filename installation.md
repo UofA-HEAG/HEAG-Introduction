@@ -59,10 +59,10 @@ Therefore, type in the terminal:
 ```
 tar -jxvf sublime_text_3_build_3143_x64.tar.bz2
 sudo mv sublime_text_3 /opt/
-sudo ln -s /opt/sublime_text_3 /usr/local/bin/subl
+sudo ln -s /opt/sublime_text/sublime_text /usr/local/bin/subl
 ```
 
-__git__  
+__git__  subl
 Git is an open source version control software.
 To install, type in the terminal:
 ```
