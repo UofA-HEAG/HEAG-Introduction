@@ -1,0 +1,239 @@
+% Compile with
+% lualatex filename.tex
+% biber filename.bcf
+% lualatex filename.tex
+% lualatex filename.tex
+% or just using:
+% make
+
+\documentclass[
+  uofacolor,
+  BCOR=12mm,     % 12mm binding corrections
+  %parskip=half,  % new paragraphs start with half line vertical space
+  open=odd,      % chapter start on odd and even pages
+  cleardoublepage=plain,
+  DIV=15
+]{uofathesis}
+
+
+% Warning, if another latex run is needed
+\usepackage[aux]{rerunfilecheck}
+
+% just list chapters, sections and subsections in the toc
+% change to 1 if you only want chapters and sections
+\setcounter{tocdepth}{2}
+
+% no space after new paragraph
+\setlength\parindent{0pt}
+
+%------------------------------------------------------------------------------
+%------------------------------ Language and Font: --------------------------
+%------------------------------------------------------------------------------
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}  % -- becomes en-dash etc.
+
+% language
+\usepackage{polyglossia}
+\setmainlanguage[variant=british]{english}
+
+% intelligent quotation marks, language and nesting sensitive
+\usepackage[autostyle]{csquotes}
+
+% microtypographical features, makes the text look nicer on the small scale
+\usepackage{microtype}
+
+% for checkmark
+\usepackage{wasysym}
+
+% for fonts
+\setsansfont[Scale=MatchLowercase]{Gill Sans SemiBold}
+\setmainfont{Palatino}
+\newfontfamily\myfont{Gill Sans}
+
+
+%------------------------------------------------------------------------------
+%------------------------ For Math Environment --------------------------------
+%------------------------------------------------------------------------------
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% Enable Unicode-Math and follow the ISO-Standards for typesetting math
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+\setmathfont{Latin Modern Math}
+
+% nice, small fracs for the text with \sfrac{}{}
+\usepackage{xfrac}  
+
+
+%------------------------------------------------------------------------------
+%---------------------------- Numbers and Units -------------------------------
+%------------------------------------------------------------------------------
+
+\usepackage[
+  locale=US,
+  separate-uncertainty=true,
+  per-mode=symbol-or-fraction,
+]{siunitx}
+\sisetup{math-micro=\text{µ},text-micro=µ}
+
+%------------------------------------------------------------------------------
+%-------------------------------- tables  -------------------------------------
+%------------------------------------------------------------------------------
+
+\usepackage{booktabs}       % provides \toprule, \midrule, \bottomrule
+\usepackage{xtab}
+
+%------------------------------------------------------------------------------
+%-------------------------------- graphics -------------------------------------
+%------------------------------------------------------------------------------
+
+\usepackage{graphicx}
+\usepackage{grffile}
+
+% allow figures to be placed in the running text by default:
+\usepackage{scrhack}
+\usepackage{float}
+\floatplacement{figure}{htbp}
+\floatplacement{table}{htbp}
+
+% keep figures and tables in the section
+\usepackage[section, below]{placeins}
+
+% figures in text
+\usepackage{wrapfig}
+
+
+
+%------------------------------------------------------------------------------
+%---------------------- customize list environments ---------------------------
+%------------------------------------------------------------------------------
+
+\usepackage{enumitem}
+
+%------------------------------------------------------------------------------
+%------------------------------ Bibliograpy ---------------------------------
+%------------------------------------------------------------------------------
+
+\usepackage[
+  backend=biber,   % use modern biber backend
+  autolang=hyphen, % load hyphenation rules
+  natbib=true,
+  style=authoryear,
+  maxbibnames=5,
+  maxcitenames=2,
+  uniquelist=false,
+  url=false, 
+  doi=false,
+  isbn=false,
+  eprint=false                
+]{biblatex}
+
+% include the bibliography
+\addbibresource{bib/ref_author.bib} 
+\addbibresource{bib/ref_physics.bib} 
+\setlength{\bibitemsep}{\baselineskip}
+
+%------------------------------------------------------------------------------
+%------------------------------ Others: ------------------------------------
+%------------------------------------------------------------------------------
+
+\usepackage[hidelinks, pdfusetitle,unicode,linkbordercolor=uofadarkblue, citecolor=uofadarkblue, urlcolor=uofadarkblue]{hyperref}
+\usepackage{bookmark}
+\usepackage[shortcuts]{extdash}
+
+\usepackage{listings}
+\lstset{ %
+  basicstyle=\footnotesize\ttfamily, 
+  language=C
+}
+
+% for lorem ipsum
+\usepackage{blindtext}
+
+
+\usepackage[rightcaption]{sidecap}
+\sidecaptionvpos{figure}{c}
+
+% command to allow "appendix A.1" instead of "section A.1" with autoref
+\newcommand{\aref}[1]{\hyperref[#1]{Appendix~\ref{#1}}}
+
+% commands to color citations, without changing contents to only one color
+\let\oldcite=\cite
+\renewcommand{\cite}[1]{\textcolor{uofadarkblue}{\oldcite{#1}}}
+\let\oldcitep=\citep
+\renewcommand{\citep}[1]{\textcolor{uofadarkblue}{\oldcitep{#1}}}
+
+\usepackage[nolist, nohyperlinks]{acronym}
+
+
+
+%------------------------------------------------------------------------------
+%-------------------------    Thesis Information   ----------------------------
+%------------------------------------------------------------------------------
+
+% Information for title page
+\author{\myfont{Albert Einstein}}
+\title{\Huge The Main Title of the Thesis}
+\subtitle{\LARGE The Subtitle of the Thesis}
+\date{\myfont{October 2018}}
+\thesisclass{Honours}
+
+\school{School of Physical Sciences}
+\faculty{Faculty of Sciences}
+\department{Department of Physics}
+\university{The University of Adelaide}
+
+% Information for second page
+\submissiondate{10th October 2018}
+\firstadvisor{Prof.~Dr.~John Doe}
+\secondadvisor{Prof.~Dr.~Jane Doe}
+
+% UofA logo on top of the titlepage
+\titlehead{\includegraphics[height=3cm, trim={0.5cm 0 0 0},clip]{logos/UofA.jpg}}
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+
+\makeadvisorpage
+
+% general front pages, numbered in Roman numerals
+\input{content/00_abstract.tex}
+% choose if / which originality declaration you need to add
+\input{./content/00_originality.tex}
+\input{./content/00_originality_publications.tex}
+\input{./content/00_acknowledgement.tex}
+
+\tableofcontents
+
+%%%%%%%%%%%%%%
+\newcommand{\p}[1]{\textcolor{uofadarkblue}{\texttt{#1}}}
+%%%%%%%%%%%%%
+
+\mainmatter
+
+% actual thesis, starting with page 1 in arabic numbers
+\input{./content/01_Introduction.tex}
+\input{./content/02_Astro.tex}
+\input{./content/03_Tipps.tex}
+
+
+% Start of appendix, numbered in latin letters
+\appendix
+\input{./content/a_catalogs.tex}
+\input{./content/b_MagicAnalysis.tex}
+
+\backmatter
+\printbibliography
+
+\end{document}

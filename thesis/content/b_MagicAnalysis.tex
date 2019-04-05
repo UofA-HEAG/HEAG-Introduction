@@ -1,0 +1,164 @@
+\chapter{MAGIC Analysis}
+\label{app:magic}
+
+\section{Selected Data}
+\label{sec:selected_data}
+
+\subsection*{3FGLJ2346.7+0705 Data}
+
+The following runs have been used for the MAGIC analysis of the source 3FGLJ2346.7+0705 and have been downloaded on superstar level:
+
+\texttt{05055339, 05055340, 05055436, 05055437, 05055438, 05055439, 05055440, 05055441, 05055471, 05055472, 05055473, 05055474, 05055475, 05055502, 05055503, 05055504, 05055505, 05055506, 05055507, 05055581, 05055582, 05055583, 05055584, 05055629, 05055630, 05055631, 05055632, 05055633, 05055634, 05055635, 05055659, 05055660, 05055670, 05055671, 05055672, 05055699, 05055700, 05057801, 05057802, 05057803, 05057804, 05057838, 05057840, 05057895, 05058673, 05058855, 05058856, 05058857, 05058859.}
+
+\vspace{0.3cm}
+
+Additionally, the following subruns have been used for the MAGIC analysis of the source 3FGLJ2346.7+0705 and have been downloaded on star level:
+
+\texttt{M1: 05057839.001-.020, 05057892.001-.005, .008-.011, .013, .015-.020, .022-.025, 05057893.001-.003, .005-.007, .009-.012, .014-.025, 05057894.001-.011, .013-.025, 05058674.001-.009, 05058858.001-.011, .016-.021.}
+
+\texttt{M2: 05057839.001-.020, 05057892.001-.005, .008-.011, .013-.020, .022-.025, \newline05057893.001-.003, .005-.007, .010, .012, .015-.025, 05057894.001-.011, .013-.025, 05058674.001-.009, 05058858.001-.010, .015-.020.}
+
+
+
+\subsection*{Crab Nebula Data}
+
+The following runs have been used for the sanity check of the MAGIC analysis of the source 3FGLJ2346.7+0705 and for the Random Forest study, and have been downloaded on superstar level:
+
+\texttt{05056516, 05056517, 05056587, 05056588, 05057065, 05057066, 05057067, 05057068, 05057069, 05057070, 05057144, 05057145, 05057146, 05057147, 05057148, 05057188, 05057189, 05057190, 05057191, 05057192, 05057649, 05057650, 05057651, 05057652, 05057653, 05057977, 05057978, 05058069, 05058072, 05058073, 05058074, 05058749, 05059266, 05059267, 05059268.}
+
+\vspace{0.3cm}
+
+Additionally, the following subruns have been used for the sanity check of the MAGIC analysis of the source 3FGLJ2346.7+0705 and the Random Forest study, and have been downloaded on star level:
+
+\texttt{M1: 05057193.002-.004, 05059212.001-.012.}
+
+\texttt{M2: 05057193.002-.004, 05059212.001-.012.}
+
+
+\newpage
+
+
+\subsection*{Data used as Hadrons}
+
+The following runs have been used for the training of the gamma / hadron separation for the MAGIC analysis of the source 3FGLJ2346.7+0705 and have been downloaded on superstar level:
+
+\texttt{1ES 0229+200: 05057396, 05057397, 05058048, 05058049, 05058461, 05058462, \newline 05058923, 05058924, 05058925, 05058926.}
+
+\texttt{M15: 05055321, 05055322, 05055323, 05055324, 05055624, 05055625, 05055626, \newline 05056900, 05056901, 05056902, 05056903. }
+
+\texttt{S3 0218+35: 05056153, 05056154, 05056155, 05056156, 05056617, 05056618, \newline 05057172, 05057173.}
+
+\texttt{Triangulum II: 05055980, 05055981, 05056416, 05056417, 05057051, 05057052, \newline 05057865, 05057602, 05057603.}
+
+
+\vspace{0.75cm}
+
+The following runs have been used for the Random Forest study and have been downloaded on superstar level:
+
+\texttt{1ES 0229+200: 05058048, 05058049, 05058461, 05058462, 05058925, 05058926.}
+
+\texttt{M15: 05055321, 05055322, 05055625, 05055626, 05056900, 05056901. }
+
+\texttt{S3 0218+35: 05056153, 05056154, 05056617, 05056618, 05057172, 05057173.}
+
+\texttt{Triangulum II: 05056416, 05056417, 05057051, 05057052, 05057602, 05057603, \newline05057865.}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Input Cards}
+\label{sec:input_cards}
+
+\subsection*{coach.rc}
+
+\begin{lstlisting}
+RF.numTree:    100
+RF.trainRatio: 0.95
+RF.createTestSample: TRUE
+RF.zdmin: 5.
+RF.zdmax: 35.
+RFLoop.FilterCuts.Continue0.Condition: MHillas_1.fSize<50. 
+RFLoop.FilterCuts.Continue1.Condition: MHillas_2.fSize<50.
+RFLoop.FilterCuts.Continue2.Condition: MHillas_1.fSize>50000. 
+RFLoop.FilterCuts.Continue3.Condition: MHillas_2.fSize>50000. 
+RFLoop.FilterCuts.Continue4.Condition: MNewImagePar_1.fLeakage1>0.15
+RFLoop.FilterCuts.Continue5.Condition: MNewImagePar_2.fLeakage1>0.15 
+RFLoop.FilterCuts.Continue6.Condition: MStereoPar.fValid<0.5
+
+#####
+
+RFLoop.GHCuts.Continue0.Condition: MImagePar_1.fNumIslands>1
+RFLoop.GHCuts.Continue1.Condition: MImagePar_2.fNumIslands>1
+RF.ReZenithing: TRUE
+RF.numAzBins:   1
+RF.numZdBins:   30
+RF.NumTryGH: 3
+RF.NdSizeGH: 5
+RF.NumVariableGH: 12
+
+RF.GHVariable1:  0.025+0.05*floor(log10(MHillas_1.fSize)/0.05)
+RF.GHVariable2:  0.025+0.05*floor(log10(MHillas_2.fSize)/0.05)
+RF.GHVariable3:  MHillas_1.fWidth
+RF.GHVariable4:  MHillas_2.fWidth
+RF.GHVariable5:  MHillas_1.fLength
+RF.GHVariable6:  MHillas_2.fLength
+RF.GHVariable7:  MStereoPar.fM1Impact
+RF.GHVariable8:  MStereoPar.fM2Impact
+RF.GHVariable9:  MStereoPar.fMaxHeight
+RF.GHVariable10: sqrt(MHillasTimeFit_1.fP1Grad*MHillasTimeFit_1.fP1Grad)
+RF.GHVariable11: sqrt(MHillasTimeFit_2.fP1Grad*MHillasTimeFit_2.fP1Grad)
+RF.GHVariable12: (0.5/30.)+(1./30.)*floor(cos(MPointingPos_1.fZd*0.0174532925)/(1./30.))
+
+#####
+
+RFLoop.EnergyCuts.Continue0.Condition: MStereoPar.fCherenkovRadius<4000
+RFLoop.EnergyCuts.Continue1.Condition: MStereoPar.fTheta2>0.1
+RFLoop.EnergyCutsUnphys.Continue0.Condition: MStereoPar.fValid<1
+RFLoop.EnergyCutsUnphys.Continue1.Condition: MStereoPar.fCherenkovDensity<0
+MEnergyTable.SizeBinning 19
+MEnergyTable.MinSize 25
+MEnergyTable.MaxSize 200000
+MEnergyTable.ImpactBinning 50
+MEnergyTable.MinImpact 0
+MEnergyTable.MaxImpact 3.5
+MEnergyTable.ZdCorrectionFormula 0.97*pow(x,-0.3)/(1-pow(1-x,2.25))
+MEnergyTable.LeakageCorrectionFormula_1 1-4*x*x
+MEnergyTable.LeakageCut_1 0.2
+MEnergyTable.LeakageCorrectionFormula_2 1-4*x*x
+MEnergyTable.LeakageCut_2 0.2
+MEnergyTable.BCorrectionFormula 0.93+0.2*sqrt(1.-pow(x,2))
+MEnergyTable.MinEvtPerBin 3
+
+########
+
+RF.NumTryDisp: 3
+RF.NdSizeDisp: 5
+RF.NumVariableDisp: 11
+
+RF.Disp1Variable1:  log10(MHillas_1.fSize)
+RF.Disp1Variable2:  log10(MHillas_2.fSize)
+RF.Disp1Variable3:  MStereoPar.fM1Impact
+RF.Disp1Variable4:  MStereoPar.fM2Impact
+RF.Disp1Variable5:  MPointingPos_1.fZd
+RF.Disp1Variable6:  MStereoPar.fMaxHeight
+RF.Disp1Variable7:  sqrt(MHillasTimeFit_1.fP1Grad*MHillasTimeFit_1.fP1Grad)
+RF.Disp1Variable8:  sqrt(MHillasTimeFit_2.fP1Grad*MHillasTimeFit_2.fP1Grad)
+RF.Disp1Variable9:  MHillas_1.fWidth
+RF.Disp1Variable10: MHillas_1.fLength
+# To be estimated in regression:
+RF.Disp1Variable11: MHillasSrc_1.fDist*0.0033703
+
+RF.Disp2Variable1:  log10(MHillas_1.fSize)
+RF.Disp2Variable2:  log10(MHillas_2.fSize)
+RF.Disp2Variable3:  MStereoPar.fM1Impact
+RF.Disp2Variable4:  MStereoPar.fM2Impact
+RF.Disp2Variable5:  MPointingPos_1.fZd
+RF.Disp2Variable6:  MStereoPar.fMaxHeight
+RF.Disp2Variable7:  sqrt(MHillasTimeFit_1.fP1Grad*MHillasTimeFit_1.fP1Grad)
+RF.Disp2Variable8:  sqrt(MHillasTimeFit_2.fP1Grad*MHillasTimeFit_2.fP1Grad)
+RF.Disp2Variable9:  MHillas_2.fWidth
+RF.Disp2Variable10: MHillas_2.fLength
+# To be estimated in regression:
+RF.Disp2Variable11: MHillasSrc_2.fDist*0.0033703
+\end{lstlisting}

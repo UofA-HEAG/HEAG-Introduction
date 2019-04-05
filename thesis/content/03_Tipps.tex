@@ -1,0 +1,41 @@
+\chapter{Tipps}
+
+
+\section{References}
+\label{sec:references}
+
+The use of \texttt{autoref} from the \texttt{hyperref} package is really useful.
+It automatically writes the type, e.\,g.\ Figure, section, subsection, of your reference.
+Like this, not only the number of your reference, but also the type is used for the link.
+Furthermore, no linebreaks between the type and the number will occur.
+To use it, just replace \texttt{\textbackslash ref} by \texttt{\textbackslash autoref}.
+
+Here is an example to show the differences between the commands:
+\ref{sec:references} vs.\ \autoref{sec:references}.
+
+For the appendix, the use of \texttt{\textbackslash autoref} will create the following:
+
+\autoref{app:magic} for the chapter, and \autoref{sec:selected_data} for the section.
+For sections, you might want to have it differently.
+Therefore, a specific command has been added in the preamble.
+Just use \texttt{\textbackslash aref} instead of \texttt{\textbackslash autoref}, and you will get the following:
+
+\aref{sec:selected_data} for the section.
+
+
+\section{Citations}
+
+The adavantage of using the citationstyle author year (instead of numbers or abbreviations) is that a reader from your field will most probably know the corresponding publication and will not need to check the bibliography.
+Moreover, a name is easier to remember than just a number.
+Therefore, you will make it easier for the reader to read your thesis (and you want to make it as comfortable for your referee as possible).
+
+In principle, there are two situations where you want to cite something:
+\texttt{\textbackslash cite}: \cite{malaga} suggests to use model XY.
+\texttt{\textbackslash citep}: The model describes the formation of stars  \citep{malaga}.
+
+
+\section{Graphics}
+
+\section{Tables}
+
+\section{Structure of the Thesis}
