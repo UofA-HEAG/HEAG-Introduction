@@ -53,14 +53,8 @@ sudo apt-get update
 __sublime__  
 Sublime is a text editor.
 It is not necessarily needed, but I personally recommend it.   
-* Download the tarball: https://sublimetext.com/3. 
-* Unpack the tarball (`tar`), move it to the dedicated folder (`mv`) and create a symlink (`ln -s`). 
-Therefore, type in the terminal:
-```
-tar -jxvf sublime_text_3_build_3143_x64.tar.bz2
-sudo mv sublime_text_3 /opt/
-sudo ln -s /opt/sublime_text/sublime_text /usr/local/bin/subl
-```
+* Go here: https://sublimetext.com/3. 
+* Follow the instructions
 
 __git__  subl
 Git is an open source version control software.
@@ -85,7 +79,7 @@ sudo apt-get install make
 
 __curl__  
 ```
-sudo apt-get curl
+sudo apt-get install curl
 ```
 
 
