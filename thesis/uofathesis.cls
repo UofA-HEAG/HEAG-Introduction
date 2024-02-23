@@ -99,7 +99,7 @@
 % set title page elements
 \subject{\myfont{\normalsize Thesis submitted for the degree of \\ \Large\thethesisclass}}
 \titlehead{\thelogo \\ \myfont{\normalsize Thesis submitted for the degree of \\ \Large\thethesisclass}}
-\publishers{\vspace{2.3cm}\large \myfont{Supervisors:\\ \thefirstadvisor\\\thesecondadvisor} \vspace{1cm} \\ \normalsize\normalfont\sffamily\thefaculty \\ \theschool \\ \thedepartment \\ \theuniversity}
+\publishers{\vspace{0.6cm}\large \myfont{Supervisors:\\ \thefirstadvisor\\\thesecondadvisor} \vspace{0.9cm} \\ \normalsize\normalfont\sffamily\thefaculty \\ \theschool \\ \thedepartment \\ \theuniversity}
 
 \addtokomafont{subject}{\raggedright\normalfont\sffamily}
 \addtokomafont{titlehead}{\raggedright\normalfont\sffamily}
@@ -107,14 +107,14 @@
 \addtokomafont{subtitle}{\raggedright}
 \addtokomafont{author}{\vspace{1cm}\raggedright\LARGE\sffamily\setlength{\tabcolsep}{0pt}}
 \addtokomafont{date}{\raggedright\sffamily}
-\addtokomafont{publishers}{\vspace{2cm}\raggedright}%\normalfont\sffamily}
+\addtokomafont{publishers}{\vspace{0cm}\raggedright}%\normalfont\sffamily}
 
 % page for the advisors
 \newcommand{\makeadvisorpage}{%
   \thispagestyle{empty}
   \vspace*{\fill}
   \begin{tabular}{@{}l@{\hspace{2em}}l@{}}
-      Principal Superviso:  & \thefirstadvisor \\
+      Principal Supervisor:  & \thefirstadvisor \\
       Co-Supervisor: & \thesecondadvisor \\
       Date of Submission:    & \thesubmissiondate
   \end{tabular}

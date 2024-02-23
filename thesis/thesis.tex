@@ -46,9 +46,9 @@
 \usepackage{wasysym}
 
 % for fonts
-\setsansfont[Scale=MatchLowercase]{Gill Sans SemiBold}
-\setmainfont{Palatino}
-\newfontfamily\myfont{Gill Sans}
+\setsansfont[Scale=MatchLowercase]{Latin Modern Sans}
+\setmainfont{Latin Modern Roman}
+\newfontfamily\myfont{Latin Modern Sans}
 
 
 %------------------------------------------------------------------------------
@@ -66,6 +66,7 @@
   sans-style=italic,
   nabla=upright,
   partial=upright,
+  warnings-off={mathtools-colon,mathtools-overbracket}
 ]{unicode-math}
 \setmathfont{Latin Modern Math}
 
@@ -82,7 +83,6 @@
   separate-uncertainty=true,
   per-mode=symbol-or-fraction,
 ]{siunitx}
-\sisetup{math-micro=\text{µ},text-micro=µ}
 
 %------------------------------------------------------------------------------
 %-------------------------------- tables  -------------------------------------
@@ -186,8 +186,8 @@
 \date{\myfont{October 2018}}
 \thesisclass{Honours}
 
-\school{School of Physical Sciences}
-\faculty{Faculty of Sciences}
+\school{School of Physics, Chemistry and Earth Sciences}
+\faculty{Faculty of Sciences, Engineering and Technology}
 \department{Department of Physics}
 \university{The University of Adelaide}
 
@@ -210,9 +210,9 @@
 % general front pages, numbered in Roman numerals
 \input{content/00_abstract.tex}
 % choose if / which originality declaration you need to add
-\input{./content/00_originality.tex}
-\input{./content/00_originality_publications.tex}
-\input{./content/00_acknowledgement.tex}
+%\input{./content/00_originality.tex}
+%\input{./content/00_originality_publications.tex}
+%\input{./content/00_acknowledgement.tex}
 
 \tableofcontents
 
